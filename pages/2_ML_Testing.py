@@ -60,7 +60,7 @@ df = pd.read_csv("Datasets/std_clean.csv")
 def load_data(path):
     return pd.read_csv(path)
 
-df = load_data(DATA_PATH)
+df = pd.read_csv("Datasets/std_clean.csv")
 
 st.header("1. 📂 Data Loading & Filtering")
 
