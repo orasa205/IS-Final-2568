@@ -118,7 +118,10 @@ def build_model(input_dim, output_dim):
     )
     return model
 
-model = build_model(X_train.shape[1], y_train.shape[1])
+if "model" not in st.session_state:
+    st.session_state.model = build_model(X_train.shape[1], y_train.shape[1])
+
+model = st.session_state.model
 
 col1, col2, col3, col4 = st.columns(4)
 
