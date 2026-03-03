@@ -54,8 +54,7 @@ st.markdown("""
 st.title("🧪 Machine Learning - Model Testing")
 st.markdown("---")
 
-DATA_PATH = "C:\\Users\\DELL\\Documents\\Orasa\\Intell\\Datasets\\std_clean.csv"
-
+df = pd.read_csv("../Datasets/std_clean.csv")
 @st.cache_data
 def load_data(path):
     return pd.read_csv(path)
