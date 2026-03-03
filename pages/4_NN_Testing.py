@@ -60,7 +60,7 @@ st.markdown("""
 st.title("🔮 Neural Network - Model Testing")
 st.markdown("---")
 
-DATA_PATH = "C:\\Users\\DELL\\Documents\\Orasa\\Intell\\Datasets\\iris_clean.csv"
+df = pd.read_csv("Datasets/iris_clean.csv")
 
 @st.cache_data
 def load_data(path):
@@ -68,7 +68,7 @@ def load_data(path):
 
 st.header("1. 📂 Load Data")
 
-df = load_data(DATA_PATH)
+df = pd.read_csv("Datasets/iris_clean.csv")
 df = df.dropna()
 
 st.subheader("Dataset Preview")
