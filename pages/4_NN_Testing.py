@@ -67,6 +67,7 @@ def load_data(path):
     return pd.read_csv(path, index_col=0)
 
 st.header("1. 📂 Load Data")
+st.warning("You must follow the steps in order, without skipping any, otherwise the program will fail to run.")
 
 df = pd.read_csv("Datasets/iris_clean.csv")
 df = df.dropna()
@@ -78,6 +79,7 @@ st.write(f"**Dataset Shape:** {df.shape[0]} rows × {df.shape[1]} columns")
 st.markdown("---")
 
 st.header("2. 🔧 Data Preprocessing")
+st.warning("You must follow the steps in order, without skipping any, otherwise the program will fail to run.")
 
 feature_columns = ['Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width']
 X = df[feature_columns].values
@@ -104,6 +106,7 @@ st.write("**Target Classes:**", " | ".join(label_encoder.classes_))
 st.markdown("---")
 
 st.header("3. 🏗️ Build Neural Network")
+st.warning("You must follow the steps in order, without skipping any, otherwise the program will fail to run.")
 
 def build_model(input_dim, output_dim):
     model = tf.keras.Sequential([
@@ -185,6 +188,7 @@ with col2:
 st.markdown("---")
 
 st.header("4. 🤖 Train Model")
+st.warning("You must follow the steps in order, without skipping any, otherwise the program will fail to run.")
 
 col1, col2 = st.columns(2)
 
@@ -216,6 +220,7 @@ if st.button("🚀 Train Neural Network"):
 st.markdown("---")
 
 st.header("5. 📊 Model Evaluation")
+st.warning("You must follow the steps in order, without skipping any, otherwise the program will fail to run.")
 
 if 'trained' in st.session_state and st.session_state.trained:
     history = st.session_state.history
@@ -279,14 +284,9 @@ if 'trained' in st.session_state and st.session_state.trained:
         st.pyplot(fig_acc)
 
 st.markdown("---")
-
-st.header("6. 🎯 Make a Prediction")
-
-col1, col2 = st.columns(2)
-
-with col1:
-    sepal_length = st.number_input("Sepal Length (cm)", min_value=0.0, max_value=10.0, value=5.8, step=0.1)
-    sepal_width = st.number_input("Sepal Width (cm)", min_value=0.0, max_value=10.0, value=3.0, step=0.1)
+          
+sepal_length = st.number_input("Sepal Length (cm)", min_value=0.0, max_value=10.0, value=5.8, step=0.1)
+sepal_width = st.number_input("Sepal Width (cm)", min_value=0.0, max_value=10.0, value=3.0, step=0.1)
 
 with col2:
     petal_length = st.number_input("Petal Length (cm)", min_value=0.0, max_value=10.0, value=1.2, step=0.1)

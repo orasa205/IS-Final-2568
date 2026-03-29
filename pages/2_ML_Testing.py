@@ -63,7 +63,7 @@ def load_data(path):
 df = pd.read_csv("Datasets/std_clean.csv")
 
 st.header("1. 📂 Data Loading & Filtering")
-
+st.warning("You must follow the steps in order, without skipping any, otherwise the program will fail to run.")
 col1, col2 = st.columns([1, 1])
 
 with col1:
@@ -96,7 +96,7 @@ st.dataframe(filtered_df.head(10), use_container_width=True)
 st.markdown("---")
 
 st.header("2. 📈 Data Visualization")
-
+st.warning("You must follow the steps in order, without skipping any, otherwise the program will fail to run.")
 viz_type = st.selectbox("Select Visualization Type", ["Histogram", "Bar Chart"])
 
 if viz_type == "Histogram":
@@ -130,6 +130,7 @@ elif viz_type == "Bar Chart":
 st.markdown("---")
 
 st.header("3. 🤖 Model Training")
+st.warning("You must follow the steps in order, without skipping any, otherwise the program will fail to run.")
 
 filtered_df = filtered_df.dropna()
 
@@ -205,6 +206,7 @@ if st.button("🚀 Train All Models"):
 st.markdown("---")
 
 st.header("4. 📊 Model Performance")
+st.warning("You must follow the steps in order, without skipping any, otherwise the program will fail to run.")
 
 if 'models_trained' in st.session_state and st.session_state.models_trained:
     results = st.session_state.results
@@ -338,6 +340,7 @@ if 'models_trained' in st.session_state and st.session_state.models_trained:
 st.markdown("---")
 
 st.header("5. 🎯 Make a Prediction")
+st.warning("You must follow the steps in order, without skipping any, otherwise the program will fail to run.")
 
 st.write("Enter feature values to predict GPA:")
 
